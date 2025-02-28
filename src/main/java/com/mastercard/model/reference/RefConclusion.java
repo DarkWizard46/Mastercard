@@ -12,10 +12,12 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "ref_hit_code")
-public class RefHitCode {
+@Table(name = "ref_conclusion")
+public class RefConclusion {
     @Id
     @Column(nullable = false)
-    private Integer hitCode;
-    private String description;
+    private Integer conclusionId;
+    private String edcTest;
+    private String edcIssue;
+    private String conclusion;
 }

@@ -2,7 +2,13 @@ package com.mastercard.model.reference;
 
 import jakarta.persistence.*;
 import org.springframework.data.annotation.Id;
+import lombok.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "ref_merchant_category")
 public class RefMerchantCategory {
@@ -11,12 +17,4 @@ public class RefMerchantCategory {
     @Column(nullable = false)
     private Integer merchantCategoryId;
     private String merchantCategory;
-
-    public Integer getMerchantCategoryId() {
-        return merchantCategoryId;
-    }
-
-    public String getMerchantCategory() {
-        return merchantCategory;
-    }
 }
