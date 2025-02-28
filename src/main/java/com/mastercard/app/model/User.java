@@ -1,4 +1,4 @@
-package com.mastercard.model;
+package com.mastercard.app.model;
 
 import jakarta.persistence.*;
 

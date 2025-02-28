@@ -1,7 +1,7 @@
-package com.mastercard.controller;
+package com.mastercard.app.controller;
 
-import com.mastercard.model.User;
-import com.mastercard.service.UserService;
+import com.mastercard.app.model.User;
+import com.mastercard.app.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

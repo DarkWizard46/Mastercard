@@ -1,6 +1,6 @@
-package com.mastercard.repository;
+package com.mastercard.app.repository;
 
-import com.mastercard.model.User;
+import com.mastercard.app.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

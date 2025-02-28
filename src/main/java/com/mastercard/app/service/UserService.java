@@ -1,7 +1,7 @@
-package com.mastercard.service;
+package com.mastercard.app.service;
 
-import com.mastercard.model.User;
-import com.mastercard.repository.UserRepository;
+import com.mastercard.app.model.User;
+import com.mastercard.app.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
