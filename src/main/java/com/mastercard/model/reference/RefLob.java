@@ -13,7 +13,6 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Entity
 @Table(name = "ref_lob")
 public class RefLob {
     @Id

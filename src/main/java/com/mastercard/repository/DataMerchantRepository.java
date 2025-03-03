@@ -1,6 +1,6 @@
 package com.mastercard.repository;
 
-import com.mastercard.model.datamerchant.DataMerchant;
+import com.mastercard.model.data.DataMerchant;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
