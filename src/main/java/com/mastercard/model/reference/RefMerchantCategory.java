@@ -13,8 +13,9 @@ import lombok.*;
 @Table(name = "ref_merchant_category")
 public class RefMerchantCategory {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer merchantCategoryId;
+    private Long merchantCategoryId;
+
     private String merchantCategory;
 }

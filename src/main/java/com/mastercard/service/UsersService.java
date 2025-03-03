@@ -2,6 +2,7 @@ package com.mastercard.service;
 
 import com.mastercard.model.users.Users;
 import com.mastercard.repository.UsersRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,7 @@ import java.util.Optional;
 
 @Service
 public class UsersService {
+    @Autowired
     private final UsersRepository usersRepository;
     private final PasswordEncoder passwordEncoder;
 

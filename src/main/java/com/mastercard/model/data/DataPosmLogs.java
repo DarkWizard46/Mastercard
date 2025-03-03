@@ -15,9 +15,10 @@ import java.util.Date;
 @Table(name = "data_posm_logs")
 public class DataPosmLogs {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer logId;
+    private Long logId;
+
     private Integer posmId;
     private Integer stock;
     @CurrentTimestamp

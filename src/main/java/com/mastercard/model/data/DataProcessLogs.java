@@ -15,9 +15,10 @@ import java.util.Date;
 @Table(name = "data_process_logs")
 public class DataProcessLogs {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer logId;
+    private Long logId;
+
     private Integer merchantId;
     private Integer hitCode;
     private String remark;

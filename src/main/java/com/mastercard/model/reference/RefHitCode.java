@@ -1,9 +1,6 @@
 package com.mastercard.model.reference;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -15,7 +12,9 @@ import lombok.*;
 @Table(name = "ref_hit_code")
 public class RefHitCode {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer hitCode;
+    private Long hitCode;
+
     private String description;
 }

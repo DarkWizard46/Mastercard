@@ -12,8 +12,10 @@ import lombok.*;
 @Table(name = "ref_mall")
 public class RefMall {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer mallId;
+    private Long mallId;
+
     private String mallName;
     private String city;
     private String zipCode;

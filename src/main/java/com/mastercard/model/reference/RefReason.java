@@ -4,7 +4,6 @@ import com.mastercard.model.ActiveStatus;
 import com.mastercard.model.ActiveStatusConverter;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CurrentTimestamp;
 
 import java.util.Date;
 
@@ -19,7 +18,8 @@ public class RefReason {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer reasonId;
+    private Long reasonId;
+
     private String reason;
     @Column(nullable = false)
     @Convert(converter = ActiveStatusConverter.class)

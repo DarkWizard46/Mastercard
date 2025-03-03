@@ -14,6 +14,7 @@ public class RefEdcTest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer testId;
+    private Long testId;
+
     private String edcTest;
 }

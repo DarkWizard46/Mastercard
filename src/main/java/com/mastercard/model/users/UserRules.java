@@ -12,9 +12,10 @@ import lombok.*;
 @Table(name = "user_rules")
 public class UserRules {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer roleId;
+    private Long roleId;
+
     private Integer privilege;
     private String menu;
 }

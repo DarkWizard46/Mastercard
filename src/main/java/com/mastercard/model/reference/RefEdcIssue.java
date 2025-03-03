@@ -12,7 +12,9 @@ import lombok.*;
 @Table(name = "ref_edc_issue")
 public class RefEdcIssue {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer edcIssueId;
+    private Long edcIssueId;
+
     private String edcissue;
 }

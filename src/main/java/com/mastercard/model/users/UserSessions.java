@@ -12,9 +12,10 @@ import lombok.*;
 @Table(name = "user_sessions")
 public class UserSessions {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private String id;
+
     @Column(unique = true, nullable = false)
     private String username;
     @Column(nullable = false)

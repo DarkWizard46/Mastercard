@@ -14,9 +14,10 @@ import java.util.Date;
 @Table(name = "keys")
 public class key {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer id;
+    private Long id;
+
     @Column(nullable = false)
     private Integer userId;
     @Column(nullable = false)

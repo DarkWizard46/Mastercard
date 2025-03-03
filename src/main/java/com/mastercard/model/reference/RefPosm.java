@@ -14,6 +14,7 @@ public class RefPosm {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer posmId;
+    private Long posmId;
+
     private String posmName;
 }

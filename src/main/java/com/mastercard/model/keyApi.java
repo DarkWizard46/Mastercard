@@ -2,9 +2,6 @@ package com.mastercard.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CurrentTimestamp;
-
-import java.util.Date;
 
 @Getter
 @Setter
@@ -17,7 +14,7 @@ public class keyApi {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer id;
+    private Long id;
     @Column(nullable = false)
     private String username;
     @Column(nullable = false)

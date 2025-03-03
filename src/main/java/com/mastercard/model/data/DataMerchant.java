@@ -19,9 +19,9 @@ import java.util.Date;
 @Table(name = "data_merchant")
 public class DataMerchant {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer merchantId;
+    private Long merchantId;
 
     private Integer batch;
     private Integer idOld;

@@ -15,9 +15,10 @@ import java.util.Date;
 @Table(name = "data_terminal_edc")
 public class DataTerminalEdc {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer terminalId;
+    private Long terminalId;
+
     @Column(nullable = false)
     private Integer merchantId;
     private String tid;

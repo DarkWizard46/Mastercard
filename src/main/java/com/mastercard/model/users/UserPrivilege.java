@@ -12,8 +12,10 @@ import lombok.*;
 @Table(name = "user_privilege")
 public class UserPrivilege {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer privilege;
+    private Long privilege;
+
     @Column(nullable = false)
     private String privilegeDesc;
     @Column(nullable = false)

@@ -15,9 +15,10 @@ import java.util.Date;
 @Table(name = "data_photo")
 public class DataPhoto {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer merchantPhotoId;
+    private Long merchantPhotoId;
+
     @Column(nullable = false)
     private Integer merchantId;
     @Column(nullable = false)

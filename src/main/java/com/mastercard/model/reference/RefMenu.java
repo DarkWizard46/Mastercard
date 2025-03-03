@@ -16,9 +16,10 @@ import lombok.*;
 @Table(name = "ref_menu")
 public class RefMenu {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer menuId;
+    private Long menuId;
+
     private String menu;
     @CurrentTimestamp
     @Column(name = "created_date")

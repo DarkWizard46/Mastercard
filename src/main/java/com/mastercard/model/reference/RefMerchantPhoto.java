@@ -14,6 +14,7 @@ public class RefMerchantPhoto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer photoId;
+    private Long photoId;
+
     private String photoCategory;
 }

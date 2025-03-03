@@ -14,8 +14,10 @@ import lombok.*;
 @Table(name = "ref_city")
 public class RefCity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer cityId;
+    private Long cityId;
+
     private String city;
     @Column(nullable = false)
     @Convert(converter = ActiveStatusConverter.class)
