@@ -1,4 +1,4 @@
-package com.mastercard.app.config;
+package com.mastercard.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
