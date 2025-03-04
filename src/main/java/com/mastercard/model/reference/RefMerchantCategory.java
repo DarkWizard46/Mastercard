@@ -2,7 +2,6 @@ package com.mastercard.model.reference;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
 @Getter
 @Setter

@@ -1,7 +1,7 @@
 package com.mastercard.model.reference;
 
-import com.mastercard.model.ActiveStatus;
-import com.mastercard.model.ActiveStatusConverter;
+import com.mastercard.constant.ActiveStatus;
+import com.mastercard.model.StatusConverter;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,7 +22,7 @@ public class RefReason {
 
     private String reason;
     @Column(nullable = false)
-    @Convert(converter = ActiveStatusConverter.class)
+    @Convert(converter = StatusConverter.class)
     private ActiveStatus isActive;
     private String createdBy;
     @Column(name = "created_date")

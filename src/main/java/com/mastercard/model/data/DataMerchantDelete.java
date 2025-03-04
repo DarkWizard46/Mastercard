@@ -1,10 +1,9 @@
 package com.mastercard.model.data;
 
-import com.mastercard.model.ActiveStatus;
-import com.mastercard.model.ActiveStatusConverter;
+import com.mastercard.constant.ActiveStatus;
+import com.mastercard.model.StatusConverter;
 import org.hibernate.annotations.CurrentTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.Id;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -62,6 +61,6 @@ public class DataMerchantDelete {
     private String zipCode1;
     private String zipCode2;
     @Column(nullable = false)
-    @Convert(converter = ActiveStatusConverter.class)
+    @Convert(converter = StatusConverter.class)
     private ActiveStatus isZipCodeValid;
 }

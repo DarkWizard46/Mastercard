@@ -34,7 +34,7 @@ public class AuthenticationFilter extends OncePerRequestFilter {
             String bearerToken = request.getHeader(AUTH_HEADER);
 
             if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
-                String token = bearerToken.substring(7); // Menghilangkan prefix "Bearer "
+                String token = bearerToken.substring(7);
 
                 if (jwtService.verifyJwtToken(token)) {
                     String username = jwtService.getUsernameFromToken(token);

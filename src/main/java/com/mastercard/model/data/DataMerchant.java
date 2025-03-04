@@ -1,12 +1,11 @@
 package com.mastercard.model.data;
 
-import com.mastercard.model.ActiveStatus;
-import com.mastercard.model.ActiveStatusConverter;
+import com.mastercard.constant.ActiveStatus;
+import com.mastercard.model.StatusConverter;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CurrentTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
@@ -58,8 +57,9 @@ public class DataMerchant {
     private Date valdiationDate;
     private String merchantConclusion;
     @CurrentTimestamp
-    @Column(name = "Visit_Date")
+    @Column(name = "Visit_Date", nullable=false)
     private Date visitDate;
+    @Column(name = "Submited_Date", nullable=false)
     private Date submitedDate;
     private String modifiedBy;
     @UpdateTimestamp
@@ -71,7 +71,7 @@ public class DataMerchant {
     private String zipCode1;
     private String zipCode2;
     @Column(nullable = false)
-    @Convert(converter = ActiveStatusConverter.class)
+    @Convert(converter = StatusConverter.class)
     private ActiveStatus isZipCodeValid;
     private String statusPasang;
     private String reasonGagalPasang;

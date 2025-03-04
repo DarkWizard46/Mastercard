@@ -1,5 +1,7 @@
 package com.mastercard.model.users;
 
+import com.mastercard.constant.Status;
+import com.mastercard.model.StatusConverter;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -22,7 +24,7 @@ import java.util.stream.Collectors;
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
+    @Column(name= "user_id", nullable = false)
     private Long id;
 
     private String nik;
@@ -35,7 +37,10 @@ public class User implements UserDetails {
     @Column(name = "password", nullable = false)
     private String password;
 
-    private String status;
+    @Convert(converter = StatusConverter.class) // Gunakan konverter untuk simpan enum sebagai String
+    @Column(name = "status", nullable = false)
+    private Status status;
+
     private String createdBy;
 
     @CreationTimestamp

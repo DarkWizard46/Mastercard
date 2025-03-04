@@ -1,5 +1,6 @@
 package com.mastercard.model;
 
+import com.mastercard.constant.ActiveStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,10 +26,10 @@ public class key {
     @Column(nullable = false)
     private Integer level;
     @Column(nullable = false)
-    @Convert(converter = ActiveStatusConverter.class)
+    @Convert(converter = StatusConverter.class)
     private ActiveStatus ignoreLimits;
     @Column(nullable = false)
-    @Convert(converter = ActiveStatusConverter.class)
+    @Convert(converter = StatusConverter.class)
     private ActiveStatus isPrivateKey;
     private String ipAddress;
     @Column(nullable = false)

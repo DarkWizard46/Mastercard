@@ -1,26 +1,15 @@
-package com.mastercard.model;
+package com.mastercard.constant;
 
-import com.mastercard.constant.Status;
+import jakarta.persistence.AttributeConverter;
+import jakarta.persistence.Converter;
 
-import java.util.List;
+public enum ActiveStatus {
+    ACTIVE,
+    DEACTIVE;
 
-public class ActiveStatus {
-    NO(0), YES(1);
-
-    private final int value;
-    private List<Status> status;
-
-    ActiveStatus(int value) {
-        this.value = value;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public static ActiveStatus fromValue(int value) {
+    public static ActiveStatus fromString(String value) {
         for (ActiveStatus status : ActiveStatus.values()) {
-            if (status.value == value) {
+            if (status.name().equalsIgnoreCase(value)) {
                 return status;
             }
         }

@@ -27,7 +27,7 @@ public class SecurityConfiguration {
         LOGGER.info("Initializing Security Configuration...");
 
         return http
-                .csrf(csrf -> csrf.disable()) // Nonaktifkan CSRF karena sistem hanya menerima request dari klien yang dipercaya
+                .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .dispatcherTypeMatchers(DispatcherType.ERROR).permitAll()
