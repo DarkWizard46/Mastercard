@@ -3,7 +3,6 @@ package com.mastercard.model.reference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.Id;
-import lombok.*;
 
 @Getter
 @Setter
@@ -12,11 +11,6 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "ref_merchant_category")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class RefMerchantCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

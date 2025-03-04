@@ -6,7 +6,6 @@ import org.hibernate.annotations.CurrentTimestamp;
 import org.springframework.data.annotation.Id;
 
 import java.util.Date;
-import lombok.*;
 
 @Getter
 @Setter
@@ -15,11 +14,6 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "ref_menu")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class RefMenu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
