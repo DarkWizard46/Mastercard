@@ -4,7 +4,6 @@ import com.mastercard.model.ActiveStatus;
 import com.mastercard.model.ActiveStatusConverter;
 import org.hibernate.annotations.CurrentTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.Id;
 import jakarta.persistence.*;
 import lombok.*;
 

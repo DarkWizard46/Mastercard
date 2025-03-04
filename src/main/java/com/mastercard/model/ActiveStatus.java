@@ -1,6 +1,6 @@
 package com.mastercard.model;
 
-public class ActiveStatus {
+public enum ActiveStatus {
     NO(0), YES(1);
 
     private final int value;

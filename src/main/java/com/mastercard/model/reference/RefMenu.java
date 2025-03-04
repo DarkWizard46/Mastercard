@@ -2,7 +2,6 @@ package com.mastercard.model.reference;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CurrentTimestamp;
-import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 import lombok.*;
