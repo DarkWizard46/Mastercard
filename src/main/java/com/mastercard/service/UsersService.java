@@ -1,6 +1,6 @@
 package com.mastercard.service;
 
-import com.mastercard.model.users.Users;
+import com.mastercard.model.users.User;
 import com.mastercard.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,13 +19,13 @@ public class UsersService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public Users registerUser(Users user) {
+    public User registerUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setPrivilege(Integer.valueOf("USER"));
         return usersRepository.save(user);
     }
 
-    public Optional<Users> findByUsername(String username) {
+    public Optional<User> findByUsername(String username) {
         return usersRepository.findByUsername(username);
     }
 }
