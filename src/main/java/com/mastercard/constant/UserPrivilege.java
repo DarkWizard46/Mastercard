@@ -1,6 +1,6 @@
 package com.mastercard.constant;
 
-public enum UserPrivileges {
+public enum UserPrivilege {
     SUPERADMIN,
     ADMIN_BD,
     MD,

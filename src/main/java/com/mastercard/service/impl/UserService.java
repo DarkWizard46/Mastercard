@@ -1,7 +1,7 @@
 package com.mastercard.service.impl;
 
-import com.mastercard.model.users.Users;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
-public interface UserService {
-    Users getUsers (String Id);
+public interface UserService extends UserDetailsService {
+    Object getByUserId (Long id);
 }

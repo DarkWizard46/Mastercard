@@ -1,7 +1,7 @@
 package com.mastercard.model.users;
 
 import com.mastercard.constant.TableName;
-import com.mastercard.constant.UserPrivileges;
+import com.mastercard.constant.UserPrivilege;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,7 +17,16 @@ public class Privilege {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long privilege;
 
-    @Column(name = "privilege_desc")
-    @Enumerated(EnumType.STRING)
-    private UserPrivileges privilege_desc;
+    private Integer role;
+
+    @Column(name = "privilege_desc", unique = true, nullable = false)
+    private String privilegeDesc;
+
+    public UserPrivilege getPrivilegeEnum() {
+        return UserPrivilege.valueOf(this.privilegeDesc);
+    }
+
+    public void setPrivilegeEnum(UserPrivilege privilege) {
+        this.privilegeDesc = privilege.name(); // Simpan sebagai String
+    }
 }
