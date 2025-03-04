@@ -1,4 +1,4 @@
-package com.mastercard.model.reference;
+package com.mastercard.model.users;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -9,12 +9,13 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "ref_hit_code")
-public class RefHitCode {
+@Table(name = "user_rules")
+public class UserRules {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Long hitCode;
+    private Long roleId;
 
-    private String description;
+    private Integer privilege;
+    private String menu;
 }

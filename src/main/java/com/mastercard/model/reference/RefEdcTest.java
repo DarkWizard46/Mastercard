@@ -9,12 +9,12 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "ref_hit_code")
-public class RefHitCode {
+@Table(name = "ref_edc_test")
+public class RefEdcTest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Long hitCode;
+    private Long testId;
 
-    private String description;
+    private String edcTest;
 }

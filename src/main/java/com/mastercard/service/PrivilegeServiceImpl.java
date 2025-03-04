@@ -17,9 +17,9 @@ public class PrivilegeServiceImpl implements PrivilegeService {
     @Override
     @Transactional
     public Privilege getOrSave(UserPrivilege privilege) {
-        return privilegeRepository.findByPrivilegeDesc(privilege.name()) // Gunakan .name() agar jadi String
+        return privilegeRepository.findByPrivilegeDesc(privilege.name())
                 .orElseGet(() -> privilegeRepository.saveAndFlush(
-                        Privilege.builder().privilegeDesc(privilege.name()).build())); // Simpan sebagai String
+                        Privilege.builder().privilegeDesc(privilege.name()).build()));
     }
 
 

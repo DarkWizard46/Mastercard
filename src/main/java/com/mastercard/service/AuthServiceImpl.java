@@ -80,7 +80,6 @@ public class AuthServiceImpl implements AuthService {
                 .username(authenticatedUser.getUsername())
                 .privilege(authenticatedUser.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList()) // ✅ Gunakan `privilege()`
                 .build();
-
     }
 
     private User authenticateUser(String username, String password) {

@@ -9,12 +9,14 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "ref_hit_code")
-public class RefHitCode {
+@Table(name = "ref_mall")
+public class RefMall {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Long hitCode;
+    private Long mallId;
 
-    private String description;
+    private String mallName;
+    private String city;
+    private String zipCode;
 }

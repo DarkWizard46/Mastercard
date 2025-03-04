@@ -1,12 +1,10 @@
-package com.mastercard.model.reference;
+package com.mastercard.model.data;
 
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CurrentTimestamp;
-import org.springframework.data.annotation.Id;
 
 import java.util.Date;
-import lombok.*;
 
 @Getter
 @Setter
@@ -14,20 +12,21 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "ref_lob")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class RefLob {
+@Table(name = "data_photo")
+public class DataPhoto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Long id;
+    private Long merchantPhotoId;
 
-    private String lob;
-    private String createdBy;
+    @Column(nullable = false)
+    private Integer merchantId;
+    @Column(nullable = false)
+    private Integer photoId;
+    private String photoCategory;
+    private String fileName;
+    private String geoInfo;
+    private String typeUpload;
     @CurrentTimestamp
     @Column(name = "Created_Date")
     private Date createdDate;
