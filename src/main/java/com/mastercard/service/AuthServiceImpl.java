@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -21,6 +22,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -69,16 +71,39 @@ public class AuthServiceImpl implements AuthService {
         LOGGER.info("Superadmin '{}' has been created successfully.", AdminUsername);
     }
 
+//    @Override
+//    public LoginResponse login(AuthRequest request) {
+//        User authenticatedUser = authenticateUser(request.getUsername(), request.getPassword());
+//
+//        String token = jwtService.generateToken(authenticatedUser);
+//
+//        return LoginResponse.builder()
+//                .token(token)
+//                .username(authenticatedUser.getUsername())
+//                .privilege(authenticatedUser.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList())
+//                .build();
+//    }
+
     @Override
     public LoginResponse login(AuthRequest request) {
-        User authenticatedUser = authenticateUser(request.getUsername(), request.getPassword());
+        User user = userRepository.findByUsername(request.getUsername())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid username or password"));
 
-        String token = jwtService.generateToken(authenticatedUser);
+        // Debugging
+        System.out.println("Password dari input: " + request.getPassword());
+        System.out.println("Password dari database: " + user.getPassword());
+
+        // Check kecocokan password
+        if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid username or password");
+        }
+
+        String token = jwtService.generateToken(user);
 
         return LoginResponse.builder()
                 .token(token)
-                .username(authenticatedUser.getUsername())
-                .privilege(authenticatedUser.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList()) // ✅ Gunakan `privilege()`
+                .username(user.getUsername())
+                .privilege(user.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList())
                 .build();
     }
 

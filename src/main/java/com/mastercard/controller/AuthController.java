@@ -28,4 +28,23 @@ public class AuthController {
                         .build()
         );
     }
+
+//    @PostMapping("/login")
+//    public ResponseEntity<CommonResponse<LoginResponse>> login(@RequestBody AuthRequest request) {
+//        LoginResponse loginResponse = authService.login(request);
+//
+//        // Generate token setelah autentikasi berhasil
+//        String token = authService.generateToken(request.getUsername());
+//
+//        loginResponse.setToken(token); // Simpan token dalam response
+//
+//        return ResponseEntity.ok(
+//                CommonResponse.<LoginResponse>builder()
+//                        .statusCode(HttpStatus.ACCEPTED.value())
+//                        .message("You have successfully logged in")
+//                        .data(loginResponse)
+//                        .build()
+//        );
+//    }
+
 }

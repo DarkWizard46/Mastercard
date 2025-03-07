@@ -6,7 +6,7 @@ import com.mastercard.model.users.User;
 import java.util.List;
 
 public interface JwtService {
-    String generateToken(User users); // Generate token berdasarkan user
+    String generateToken(User user); // Generate token berdasarkan user
 
     boolean verifyJwtToken(String token); // Verifikasi token JWT
 

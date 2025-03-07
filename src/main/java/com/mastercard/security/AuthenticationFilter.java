@@ -39,7 +39,6 @@ public class AuthenticationFilter extends OncePerRequestFilter {
                 if (jwtService.verifyJwtToken(token)) {
                     String username = jwtService.getUsernameFromToken(token);
                     List<Privilege> privileges = jwtService.getPrivilegeFromToken(token);
-                    System.out.println("Privileges from token: " + privileges); // Debug
 
                     List<GrantedAuthority> authorities = privileges.stream()
                             .map(privilege -> new SimpleGrantedAuthority("PRIV_" + privilege.getPrivilegeDesc()))
@@ -53,12 +52,23 @@ public class AuthenticationFilter extends OncePerRequestFilter {
                     SecurityContextHolder.getContext().setAuthentication(authentication);
 
                     LOGGER.info("User '{}' authenticated with privileges: {}", username, privileges);
+                } else {
+                    SecurityContextHolder.clearContext();
+                    LOGGER.warn("Invalid JWT token");
                 }
             }
         } catch (Exception e) {
+            SecurityContextHolder.clearContext();
             LOGGER.warn("Authentication failed: {}", e.getMessage());
         }
 
         filterChain.doFilter(request, response);
     }
+
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+        return request.getRequestURI().equals("/api/v1/auth/login");
+    }
+
+
 }
