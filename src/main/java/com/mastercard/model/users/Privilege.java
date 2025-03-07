@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = TableName.PRIVILEGE)
+@Table(name = "user_privilege")
 @Getter
 @Setter
 @NoArgsConstructor
